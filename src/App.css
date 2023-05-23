@@ -1,0 +1,70 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+body{
+  width: 1024px;
+  height: 768;
+}
+header{
+  display: flex;
+  justify-content: start;
+  background-color: green;
+}
+header img{
+  width: auto;
+  height: 80px;
+  margin: 20px;
+}
+main{
+  text-align: center;
+}
+main h3{
+  margin: 20px;
+  color: rgb(15, 71, 117);
+  font-size: 25px;
+}
+main h1{
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: rgb(15, 71, 117);
+}
+
+.cuentas{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.cuenta{
+  border: none;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  margin: 20px;
+  padding: 50px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.saldoCuenta{
+  font-size: 25px;
+  padding-top: 40px;
+  margin-bottom: 195px;
+}
+footer{
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  
+}
+footer button{
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+}
