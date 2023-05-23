@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
+/* Componente Home, en donde estan los resultados de la api */
 const Home = () => {
+
 
     const API_URL = 'https://api.npoint.io/97d89162575a9d816661'
 
     useEffect(() => {
+        /* Usamos useEffect para hacer el llamado a la api con fetch */
         fetch(API_URL)
         .then(response => response.json())
-        .then(data => setCuentas(data.cuentas))
+        .then(data => setCuentas(data.cuentas)) /* Seteamos la respuesta en un estado */
         .catch(error => console.log(error))
     }, [])
     
     const [cuentas, setCuentas] = useState([])
+    /* Atraves de este estado vamos a mostrar los resultados en la Home */
     const [indiceInicial, setIndiceInicial] = useState(0);
     const [indiceFinal, setIndiceFinal] = useState(indiceInicial + 5);
 
@@ -21,7 +25,7 @@ const Home = () => {
         {indiceInicial > 4 ?  setIndiceInicial(nuevoIndiceInicial - 1) : setIndiceInicial(nuevoIndiceInicial)}
         setIndiceFinal(nuevoIndiceInicial + 4);
     };
-    
+    /* Usamos 2 funciones, una para mostrar los resultados anteriores y otra para mostrar los siguientes resultados */
     const mostrarRespuestasAnteriores = () => {
         const nuevoIndiceInicial = Math.max(indiceInicial - 5, 0);
         {indiceInicial>5 ? setIndiceInicial(nuevoIndiceInicial + 1): setIndiceInicial(nuevoIndiceInicial)}

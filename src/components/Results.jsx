@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 const Results = () => {
 
   const [result, setResult] = useState([]);
-
+  
+/* Usamos URLSearchParams para recuperar el index de cada cuenta */
   let query = new URLSearchParams(window.location.search);
   let index = query.get('index')
 
+  /* Usamos useEffect para hacer el llamado a la api con fetch */
     useEffect(() => {
       const API_URL = `https://api.npoint.io/97d89162575a9d816661/cuentas/${index}`
 
